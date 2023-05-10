@@ -12,10 +12,8 @@ WORKDIR /var/www/app
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Uncomment these lines if you want to install Symfony on your PHP Container
-
-#RUN curl -sS https://get.symfony.com/cli/installer | bash
-#RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+RUN curl -sS https://get.symfony.com/cli/installer | bash
+RUN mv /root/.symfony/bin/symfony5 /usr/local/bin/symfony
 
 RUN echo 'memory_limit = 2048M' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
 
