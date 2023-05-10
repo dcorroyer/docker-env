@@ -9,6 +9,3 @@ src/
 
 ### Mac OS files
 .DS_Store
-
-### SSL Keys
-/docker/nginx/*.pem
