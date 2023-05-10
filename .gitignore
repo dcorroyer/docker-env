@@ -1,0 +1,14 @@
+### idea
+.idea/
+
+### src
+src/
+
+### mysql
+/mysql/
+
+### Mac OS files
+.DS_Store
+
+### SSL Keys
+/docker/nginx/*.pem

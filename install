@@ -1,0 +1,24 @@
+#!/bin/bash
+#Setup your app
+
+docker-compose up -d
+
+src=$(ls -A 'src/')
+
+if [[ -n "$src" ]]; then
+  echo "folder is not empty"
+
+  if [ -f src/.env ]; then
+    echo ".env exist"
+  else
+    echo ".env doesn't exist"
+    cp src/.env.example src/.env
+    echo ".env copied from .env.example"
+  fi
+
+  docker-compose run --rm php composer install
+else
+  echo "folder is empty, import your project in src folder"
+fi
+
+echo "install finished, remember to check the configuration of .env and .env.testing and configure your database"
